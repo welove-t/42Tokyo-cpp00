@@ -1,13 +1,13 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+// #include "Contact.hpp"
 #include <iostream>
-#include "Contact.hpp"
 
 class PhoneBook
 {
 	private:
-		Contact	contacts[8];
+		// Contact	contacts[8];
 		int		readInput(void) const;
 
 	public:
@@ -15,7 +15,7 @@ class PhoneBook
 		void	searchContact(void);
 		void	showContact(void) const;
 		void	exit(void) const;
-		void	start(void) const;
+		void	start(void);
 };
 
 #endif
