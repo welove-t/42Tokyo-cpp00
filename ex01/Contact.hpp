@@ -13,8 +13,9 @@ class Contact
 		std::string phoneNumber;
 		std::string darkestSecret;
 	public:
-		void	initialized(void);
-		void	viewContact(int index);
+		void		settingInput(void);
+		void		viewContact(int index);
+		std::string	getInput(void);
 };
 
 #endif

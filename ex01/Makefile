@@ -2,10 +2,9 @@
 NAME 	= main
 CC 		= c++
 CFLAGS 	= -Wall -Werror -Wextra -std=c++98
-FILES 	= main PhoneBook
+FILES 	= main PhoneBook Contact
 SRCS	= $(FILES:=.cpp)
 OBJS 	= $(SRCS:.cpp=.o)
-HEADER	= PhonoeBook.hpp
 
 all: $(NAME)
 
