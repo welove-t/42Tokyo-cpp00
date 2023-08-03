@@ -7,24 +7,21 @@ int main(void)
 
 	std::string input = "";
 	phoneBook.start();
-	while (input.compare("EXIT"))
+	do
 	{
+		std::cout << "input: " << std::flush;
+        std::getline(std::cin, input);
 		if (!input.compare("ADD"))
 			phoneBook.addContact();
 		else if (!input.compare("SEARCH"))
 		{
-			// phoneBook.showContact();
+			phoneBook.showContact();
 			// phoneBook.searchContact();
 		}
 		else if (!input.empty() && input.compare("EXIT"))
 			std::cout << "bad command" << std::endl;
-        if (input.compare("EXIT"))
-		{
-            std::cout << "input: " << std::flush;
-            std::getline(std::cin, input);
-        }
-		// std::cin >> input;
-	}
+
+	} while (input.compare("EXIT") && !std::cin.eof());
 	return 0;
 }
 
