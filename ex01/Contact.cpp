@@ -9,12 +9,28 @@ std::string	Contact::getInput(std:: string const str)
 {
 	std:: string input = "";
 
-	std:: cout << str << " > " << std::flush;
-	std::getline(std::cin, input);
-	return (input);
+	do
+	{
+		std:: cout << str << " > " << std::flush;
+		std::getline(std::cin, input);
+		if (std::cin.eof())
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			return NULL;
+		}
+		if (std::cin.good() && !input.empty())
+			break ;
+		else
+		{
+			std::cin.clear();
+			std::cout << "invalid value" << std::endl;
+		}
+	} while(true);
+	return input;
 }
 
-bool	Contact::checkContactIndex(int index) const
+bool	Contact::checkContactIndex(void) const
 {
 	if (this->index <= 0)
 		return false;
@@ -44,9 +60,9 @@ std::string	Contact::printFormat(std::string str) const
 
 }
 
-void	Contact::viewList(int index) const
+void	Contact::viewList(void) const
 {
-	if (!checkContactIndex(index))
+	if (!this->checkContactIndex())
 		return ;
 	std::cout << "|" << std::setw(10) <<  this->index << std::flush;
 	std::cout << "|" << std::setw(10) <<  printFormat(this->firstName) << std::flush;
