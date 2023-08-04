@@ -1,6 +1,6 @@
 #include "PhoneBook.hpp"
 
-void	PhoneBook::start(void)
+void	PhoneBook::start(void) const
 {
 	std::cout << "------- Phone Book Start !! -------" << std::endl;
 }
@@ -19,10 +19,13 @@ void	PhoneBook::showContact(void) const
 	std:: cout << "-----------------------------------------" << std::endl;
 	std:: cout << "                Contacts                 " << std::endl;
 	std:: cout << "-----------------------------------------" << std::endl;
-	for (int i = 0; i < 8; i++)
+	if (!contacts[0].checkContactIndex())
 	{
-		contacts[i].viewList();
+		std:: cout << "no contacts yet" << std::endl;
+		return ;
 	}
+	for (int i = 0; i < 8; i++)
+		contacts[i].viewList();
 }
 
 int 	PhoneBook::readIndexInput(void) const
@@ -65,10 +68,12 @@ int 	PhoneBook::readIndexInput(void) const
 	return index;
 }
 
-bool	PhoneBook::searchContact(void)
+bool	PhoneBook::searchContact(void) const
 {
 	int index;
 
+	if (!contacts[0].checkContactIndex())
+		return true;
 	index = readIndexInput() - 1;
 	if (index == -2)
 		return true;

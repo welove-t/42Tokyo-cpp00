@@ -14,9 +14,9 @@ class PhoneBook
 		int		readIndexInput(void) const;
 		void	addContact(void);
 		void	showContact(void) const;
-		bool	searchContact(void);
+		bool	searchContact(void) const;
 		void	exit(void) const;
-		void	start(void);
+		void	start(void) const;
 };
 
 #endif
