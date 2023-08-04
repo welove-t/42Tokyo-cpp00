@@ -21,7 +21,7 @@ void	PhoneBook::showContact(void) const
 	std:: cout << "-----------------------------------------" << std::endl;
 	for (int i = 0; i < 8; i++)
 	{
-		contacts[i].viewList(i);
+		contacts[i].viewList();
 	}
 }
 
@@ -49,7 +49,7 @@ int 	PhoneBook::readIndexInput(void) const
 			std::stringstream	ss(str);
 			if (ss >> index && (1 <= index && index <= 8))
 			{
-				if (!contacts[index - 1].checkContactIndex(index - 1))
+				if (!contacts[index - 1].checkContactIndex())
 					std::cout << "no contact" << std::endl;
 				else
         			return index;
@@ -74,6 +74,6 @@ bool	PhoneBook::searchContact(void)
 		return true;
 	if (index == -1)
 	 	return false;
-	contacts[index].viewList(index);
+	contacts[index].viewList();
 	return true;
 }
