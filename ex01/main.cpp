@@ -16,9 +16,7 @@ int main(void)
 		else if (!input.compare("SEARCH"))
 		{
 			phoneBook.showContact();
-			if (phoneBook.searchContact())
-				std::cin.clear();
-			else
+			if (!phoneBook.searchContact())
 			{
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -26,7 +24,6 @@ int main(void)
 		}
 		else if (!input.empty() && input.compare("EXIT"))
 			std::cout << "bad command" << std::endl;
-
 	} while (input.compare("EXIT") && !std::cin.eof());
 	return 0;
 }

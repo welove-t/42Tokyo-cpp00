@@ -2,7 +2,7 @@
 
 void	PhoneBook::start(void)
 {
-	std::cout << "Phone Book Start !!" << std::endl;
+	std::cout << "------- Phone Book Start !! -------" << std::endl;
 }
 
 void	PhoneBook::addContact(void)
@@ -10,12 +10,15 @@ void	PhoneBook::addContact(void)
 	static int	i;
 
 	contacts[i % 8].settingInput();
-	contacts[i % 8].setIndex(i);
+	contacts[i % 8].setIndex(i % 8);
 	i++;
 }
 
 void	PhoneBook::showContact(void) const
 {
+	std:: cout << "-----------------------------------------" << std::endl;
+	std:: cout << "                Contacts                 " << std::endl;
+	std:: cout << "-----------------------------------------" << std::endl;
 	for (int i = 0; i < 8; i++)
 	{
 		contacts[i].viewList(i);
