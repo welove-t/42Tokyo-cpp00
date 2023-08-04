@@ -16,7 +16,13 @@ int main(void)
 		else if (!input.compare("SEARCH"))
 		{
 			phoneBook.showContact();
-			// phoneBook.searchContact();
+			if (phoneBook.searchContact())
+				std::cin.clear();
+			else
+			{
+				std::cin.clear();
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			}
 		}
 		else if (!input.empty() && input.compare("EXIT"))
 			std::cout << "bad command" << std::endl;

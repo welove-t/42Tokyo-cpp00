@@ -3,20 +3,20 @@
 
 #include "Contact.hpp"
 #include <iostream>
+#include <sstream>
 
 class PhoneBook
 {
 	private:
 		Contact	contacts[8];
-		int		readInput(void) const;
 
 	public:
+		int		readIndexInput(void) const;
 		void	addContact(void);
-		void	searchContact(void);
 		void	showContact(void) const;
+		bool	searchContact(void);
 		void	exit(void) const;
 		void	start(void);
-		void	testSet(void);
 };
 
 #endif

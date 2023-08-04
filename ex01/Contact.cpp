@@ -1,5 +1,9 @@
 #include "Contact.hpp"
 
+Contact::Contact()
+{
+	this->index = 0;
+}
 
 std::string	Contact::getInput(std:: string const str)
 {
@@ -8,6 +12,13 @@ std::string	Contact::getInput(std:: string const str)
 	std:: cout << str << " > " << std::flush;
 	std::getline(std::cin, input);
 	return (input);
+}
+
+bool	Contact::checkContactIndex(int index) const
+{
+	if (this->index <= 0)
+		return false;
+	return true;
 }
 
 void	Contact::settingInput(void)
@@ -35,7 +46,7 @@ std::string	Contact::printFormat(std::string str) const
 
 void	Contact::viewList(int index) const
 {
-	if (this->index <= 0)
+	if (!checkContactIndex(index))
 		return ;
 	std::cout << "|" << std::setw(10) <<  this->index << std::flush;
 	std::cout << "|" << std::setw(10) <<  printFormat(this->firstName) << std::flush;

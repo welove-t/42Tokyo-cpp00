@@ -14,9 +14,11 @@ class Contact
 		std::string phoneNumber;
 		std::string darkestSecret;
 	public:
+		Contact();
 		void		settingInput(void);
 		void		setIndex(int index);
 		void		viewList(int index) const;
+		bool		checkContactIndex(int index) const;
 		std::string	printFormat(std::string const str) const;
 		std::string	getInput(std::string const str);
 };
