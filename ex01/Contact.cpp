@@ -17,9 +17,9 @@ std::string	Contact::getInput(std:: string const str)
 		{
 			std::cin.clear();
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-			return NULL;
+			return "";
 		}
-		if (input.length() > 20 )
+		if (input.length() > 20)
 		{
 			std::cout << "Please write in 20 words or less" << std::endl;
 			continue ;
