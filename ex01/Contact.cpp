@@ -69,7 +69,26 @@ void	Contact::viewList(void) const
 	std::cout << "|" << std::endl;
 }
 
+void	Contact::searchList(void) const
+{
+	if (!this->checkContactIndex())
+		return ;
+	std::cout << "index:\t" << this->index << std::endl;
+	std::cout << "firstName:\t" <<  this->firstName << std::endl;
+	std::cout << "lasName:\t" <<  this->lastName << std::endl;
+	std::cout << "nickName:\t" <<  this->nickName << std::endl;
+	std::cout << "phoneNumber:\t" <<  this->phoneNumber << std::endl;
+	std::cout << "darkestSecret:\t" <<  this->darkestSecret << std::endl;
+	std::cout << std::endl;
+}
+
 void	Contact::setIndex(int index)
 {
 	this->index = index + 1;
 }
+
+
+/*
+contactクラスはプライベート
+
+*/

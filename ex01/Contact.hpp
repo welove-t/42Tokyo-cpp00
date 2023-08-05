@@ -18,6 +18,7 @@ class Contact
 		void		settingInput(void);
 		void		setIndex(int index);
 		void		viewList(void) const;
+		void		searchList(void) const;
 		bool		checkContactIndex(void) const;
 		std::string	printFormat(std::string const str) const;
 		std::string	getInput(std::string const str);

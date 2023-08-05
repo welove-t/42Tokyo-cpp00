@@ -79,6 +79,6 @@ bool	PhoneBook::searchContact(void) const
 		return true;
 	if (index == -1)
 	 	return false;
-	contacts[index].viewList();
+	contacts[index].searchList();
 	return true;
 }
