@@ -19,6 +19,11 @@ std::string	Contact::getInput(std:: string const str)
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			return NULL;
 		}
+		if (input.length() > 20 )
+		{
+			std::cout << "Please write in 20 words or less" << std::endl;
+			continue ;
+		}
 		if (std::cin.good() && !input.empty())
 			break ;
 		else
@@ -73,7 +78,7 @@ void	Contact::searchList(void) const
 {
 	if (!this->checkContactIndex())
 		return ;
-	std::cout << "index:\t" << this->index << std::endl;
+	std::cout << "index:\t\t" << this->index << std::endl;
 	std::cout << "firstName:\t" <<  this->firstName << std::endl;
 	std::cout << "lasName:\t" <<  this->lastName << std::endl;
 	std::cout << "nickName:\t" <<  this->nickName << std::endl;
