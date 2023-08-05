@@ -1,9 +1,9 @@
 
-NAME 	= megaphone
-CC 		= c++
-CFLAGS 	= -Wall -Werror -Wextra -std=c++98
-SRCS 	= megaphone.cpp
-OBJS 	= $(SRCS:.cpp=.o)
+NAME		= megaphone
+CXX 		= c++
+CXXFLAGS	= -Wall -Werror -Wextra -std=c++98
+SRCS		= megaphone.cpp
+OBJS		= $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
