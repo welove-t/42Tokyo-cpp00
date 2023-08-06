@@ -13,6 +13,8 @@ class Contact
 		std::string nickName;
 		std::string phoneNumber;
 		std::string darkestSecret;
+		std::string	printFormat(std::string const str) const;
+		std::string	getInput(std::string const str);
 	public:
 		Contact();
 		void		settingInput(void);
@@ -20,8 +22,6 @@ class Contact
 		void		viewList(void) const;
 		void		searchList(void) const;
 		bool		checkContactIndex(void) const;
-		std::string	printFormat(std::string const str) const;
-		std::string	getInput(std::string const str);
 };
 
 #endif

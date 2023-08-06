@@ -9,9 +9,8 @@ class PhoneBook
 {
 	private:
 		Contact	contacts[8];
-
-	public:
 		int		readIndexInput(void) const;
+	public:
 		void	addContact(void);
 		void	showContact(void) const;
 		bool	searchContact(void) const;
