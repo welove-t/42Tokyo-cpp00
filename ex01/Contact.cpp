@@ -47,11 +47,16 @@ void	Contact::settingInput(void)
 	std:: cout << "-----------------------------------------" << std::endl;
 	std:: cout << "  Please enter the required information  " << std::endl;
 	std:: cout << "-----------------------------------------" << std::endl;
-	this->firstName = getInput("firstName");
-	this->lastName = getInput("lastName");
-	this->nickName = getInput("nickName");
-	this->phoneNumber = getInput("phoneNumber");
-	this->darkestSecret = getInput("darkestSecret");
+	if ((this->firstName = getInput("firstName")) == "")
+		return ;
+	if ((this->lastName = getInput("lastName")) == "")
+		return ;
+	if ((this->nickName = getInput("nickName")) == "")
+		return ;
+	if ((this->phoneNumber = getInput("phoneNumber")) == "")
+		return ;
+	if ((this->darkestSecret = getInput("darkestSecret")) == "")
+		return ;
 	std:: cout << "Completion of registration !" << std::endl;
 }
 
